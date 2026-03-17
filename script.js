@@ -38,6 +38,42 @@ console.log(list);
 // output 20 - > 10
 
 
+//// Insert at End
+
+insertAtEnd(data) {
+  let newNode = new Node(data);
+
+  if (!this.head) {
+    this.head = newNode;
+    return;
+  }
+
+  let temp = this.head;
+  while (temp.next) {
+    temp = temp.next;
+  }
+
+  temp.next = newNode;
+}
+
+/// Output: 20 -> 10 -> 30
+
+//// Traverse (Print List)
+
+printList() {
+  let temp = this.head;
+  let result = "";
+
+  while (temp) {
+    result += temp.data + " -> ";
+    temp = temp.next;
+  }
+
+  console.log(result + "null");
+}
+
+///output 20 -> 10 -> 30 -> null
+
 
 
 
