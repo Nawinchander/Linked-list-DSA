@@ -60,7 +60,7 @@ insertAtEnd(data) {
 
 //// Traverse (Print List)
 
-printList() {
+printList1() {
   let temp = this.head;
   let result = "";
 
@@ -74,6 +74,38 @@ printList() {
 
 ///output 20 -> 10 -> 30 -> null
 
+
+
+/// Delete a Node
+
+delete(data) {
+  if (!this.head) return;
+
+  // If head needs to be deleted
+  if (this.head.data === data) {
+    this.head = this.head.next;
+    return;
+  }
+
+  let temp = this.head;
+
+  while (temp.next && temp.next.data !== data) {
+    temp = temp.next;
+  }
+
+  if (temp.next) {
+    temp.next = temp.next.next;
+  }
+}
+
+/// example
+
+list.delete(10);
+list.printList();
+
+/// output
+
+// 20 -> 30 -> null
 
 
 
